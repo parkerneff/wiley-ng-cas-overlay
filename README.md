@@ -98,3 +98,21 @@ Invokes the CAS Command Line Shell. For a list of commands either use no argumen
 ```bash
 ./build.sh cli
 ```
+
+## Wiley Build Instructions
+
+ 
+create /etc/cas dir.  Make sure you have permission to add file
+
+Generate a self signed SSL cert for local testing
+```bash
+./build.sh gencert
+```
+build
+```bash
+./build.sh package
+```
+run
+```bash
+./build.sh run
+```
