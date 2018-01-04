@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.wileyng.cas.auth.MyAuthenticationEventExecutionPlanConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.wileyng.cas.auth.NgAuthenticationEventExecutionPlanConfiguration

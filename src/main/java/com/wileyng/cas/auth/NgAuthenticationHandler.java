@@ -12,6 +12,11 @@ import org.slf4j.LoggerFactory;
 import javax.security.auth.login.FailedLoginException;
 import java.security.GeneralSecurityException;
 
+/*
+Example CAS Custom Authentication class that can be used as a starting point for a Custom authentication class that validates
+userid/password vie the NGUser API
+Currently the only valid credential is parker/password
+ */
 public class NgAuthenticationHandler extends AbstractUsernamePasswordAuthenticationHandler {
     private static final Logger LOGGER = LoggerFactory.getLogger(NgAuthenticationHandler.class);
 
@@ -22,8 +27,8 @@ public class NgAuthenticationHandler extends AbstractUsernamePasswordAuthenticat
 
     protected HandlerResult authenticateUsernamePasswordInternal(final UsernamePasswordCredential credential,
                                                                  final String originalPassword) throws GeneralSecurityException {
-        LOGGER.info("user={}, password={}", credential.getUsername(), credential.getPassword()); //TODO delete this
-
+        LOGGER.info("authenticating user {}", credential.getUsername());
+    // this can be replaced with a call to the NGUser API
         if ("parker".equalsIgnoreCase(credential.getUsername()) && "password".equalsIgnoreCase(credential.getPassword())) {
             return createHandlerResult(credential,
                     this.principalFactory.createPrincipal(credential.getUsername()), null);

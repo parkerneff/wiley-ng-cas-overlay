@@ -81,12 +81,13 @@
         <dependency>
             <groupId>org.apereo.cas</groupId>
             <artifactId>cas-server-core-authentication</artifactId>
-            <version>5.2.0</version>
+            <version>${cas.version}</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apereo.cas</groupId>
             <artifactId>cas-server-core-configuration</artifactId>
-            <version>5.2.1</version>
+            <version>${cas.version}</version>
             <scope>compile</scope>
         </dependency>
 

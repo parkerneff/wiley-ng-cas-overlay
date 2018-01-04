@@ -9,15 +9,15 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-@Configuration("MyAuthenticationEventExecutionPlanConfiguration")
+@Configuration("NgAuthenticationEventExecutionPlanConfiguration")
 @EnableConfigurationProperties(CasConfigurationProperties.class)
-public class MyAuthenticationEventExecutionPlanConfiguration
+public class NgAuthenticationEventExecutionPlanConfiguration
         implements AuthenticationEventExecutionPlanConfigurer {
     @Autowired
     private CasConfigurationProperties casProperties;
 
     @Bean
-    public AuthenticationHandler myAuthenticationHandler() {
+    public AuthenticationHandler ngAuthenticationHandler() {
         final NgAuthenticationHandler handler = new NgAuthenticationHandler("hello", null, null, 1);
         /*
             Configure the handler by invoking various setter methods.
@@ -31,7 +31,7 @@ public class MyAuthenticationEventExecutionPlanConfiguration
     @Override
     public void configureAuthenticationExecutionPlan(final AuthenticationEventExecutionPlan plan) {
        // if (feelingGoodOnAMondayMorning()) {
-            plan.registerAuthenticationHandler(myAuthenticationHandler());
+            plan.registerAuthenticationHandler(ngAuthenticationHandler());
      //   }
     }
 }
