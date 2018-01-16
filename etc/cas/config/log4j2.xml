@@ -8,7 +8,7 @@
         -->
         <Property name="cas.log.dir" >.</Property>
         <!-- To see more CAS specific logging, adjust this property to info or debug or run server with -Dcas.log.leve=debug -->
-        <Property name="cas.log.level" >warn</Property>
+        <Property name="cas.log.level" >debug</Property>
     </Properties>
     <Appenders>
         <Console name="console" target="SYSTEM_OUT">
@@ -44,16 +44,16 @@
         </RollingFile>
 
         <CasAppender name="casAudit">
-            <AppenderRef ref="auditlogfile" />
+            <AppenderRef ref="console" />
         </CasAppender>
         <CasAppender name="casFile">
-            <AppenderRef ref="file" />
+            <AppenderRef ref="console" />
         </CasAppender>
         <CasAppender name="casConsole">
             <AppenderRef ref="console" />
         </CasAppender>
         <CasAppender name="casPerf">
-            <AppenderRef ref="perfFileAppender" />
+            <AppenderRef ref="console" />
         </CasAppender>
     </Appenders>
     <Loggers>
@@ -96,7 +96,7 @@
         <AsyncLogger name="com.wileyng.cas" level="debug" />
 
         <!-- Log perf stats only to perfStats.log -->
-        <AsyncLogger name="perfStatsLogger" level="info" additivity="false" includeLocation="true">
+        <AsyncLogger name="perfStatsLogger" level="error" additivity="false" includeLocation="true">
             <AppenderRef ref="casPerf"/>
         </AsyncLogger>
 

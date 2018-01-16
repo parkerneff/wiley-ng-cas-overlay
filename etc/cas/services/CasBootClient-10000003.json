@@ -1,0 +1,9 @@
+{
+  "@class" : "org.apereo.cas.services.RegexRegisteredService",
+  "serviceId" : "^https://localhost:8444",
+  "name" : "CasBoot",
+  "theme" : "apereo",
+  "id" : 10000003,
+  "description" : "CasBoot foundation sample service",
+  "evaluationOrder" : 10
+}
